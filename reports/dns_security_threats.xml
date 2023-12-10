@@ -1,0 +1,24 @@
+<entry name="DNS Security threats">
+  <type>
+    <{{ report_type }}>
+      <sortby>repeatcnt</sortby>
+      <aggregate-by>
+        <member>src</member>
+        <member>srcuser</member>
+        <member>dst</member>
+        <member>category-of-threatid</member>
+        <member>misc</member>
+        <member>action</member>
+      </aggregate-by>
+      <values>
+        <member>repeatcnt</member>
+      </values>
+    </{{ report_type }}>
+  </type>
+  <period>last-calendar-day</period>
+  <topn>250</topn>
+  <topm>10</topm>
+  <caption>DNS Security threats</caption>
+  <query>( subtype eq 'spyware' ) and (( category-of-threatid eq 'dns' ) or ( category-of-threatid eq 'dns-adtracking' ) or ( category-of-threatid eq 'dns-c2' ) or ( category-of-threatid eq 'dns-ddns' ) or ( category-of-threatid eq 'dns-grayware' ) or ( category-of-threatid eq 'dns-malware' ) or ( category-of-threatid eq 'dns-new-domain' ) or ( category-of-threatid eq 'dns-parked' ) or ( category-of-threatid eq 'dns-phishing' ) or ( category-of-threatid eq 'dns-proxy' ))</query>
+  <frequency>daily</frequency>
+</entry>

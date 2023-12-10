@@ -1,0 +1,76 @@
+<entry name="ZP-BPA-External">
+  <flood>
+    <tcp-syn>
+      <red>
+        <alarm-rate>{{ alarm_rate }}</alarm-rate>
+        <activate-rate>{{ activate_rate }}</activate-rate>
+        <maximal-rate>{{ max_rate }}</maximal-rate>
+      </red>
+      <enable>yes</enable>
+    </tcp-syn>
+    <udp>
+      <red>
+        <alarm-rate>{{ alarm_rate }}</alarm-rate>
+        <activate-rate>{{ activate_rate }}</activate-rate>
+        <maximal-rate>{{ max_rate }}</maximal-rate>
+      </red>
+      <enable>yes</enable>
+    </udp>
+    <icmp>
+      <red>
+        <alarm-rate>{{ alarm_rate }}</alarm-rate>
+        <activate-rate>{{ activate_rate }}</activate-rate>
+        <maximal-rate>{{ max_rate }}</maximal-rate>
+      </red>
+      <enable>yes</enable>
+    </icmp>
+    <icmpv6>
+      <red>
+        <alarm-rate>{{ alarm_rate }}</alarm-rate>
+        <activate-rate>{{ activate_rate }}</activate-rate>
+        <maximal-rate>{{ max_rate }}</maximal-rate>
+      </red>
+      <enable>yes</enable>
+    </icmpv6>
+    <other-ip>
+      <red>
+        <alarm-rate>{{ alarm_rate }}</alarm-rate>
+        <activate-rate>{{ activate_rate }}</activate-rate>
+        <maximal-rate>{{ max_rate }}</maximal-rate>
+      </red>
+      <enable>yes</enable>
+    </other-ip>
+  </flood>
+  <scan>
+    <entry name="8001">
+      <action>
+        <block/>
+      </action>
+      <interval>2</interval>
+      <threshold>100</threshold>
+    </entry>
+    <entry name="8002">
+      <action>
+        <block/>
+      </action>
+      <interval>10</interval>
+      <threshold>100</threshold>
+    </entry>
+    <entry name="8003">
+      <action>
+        <block/>
+      </action>
+      <interval>2</interval>
+      <threshold>100</threshold>
+    </entry>
+  </scan>
+  <discard-strict-source-routing>yes</discard-strict-source-routing>
+  <discard-loose-source-routing>yes</discard-loose-source-routing>
+  <discard-unknown-option>yes</discard-unknown-option>
+  <discard-malformed-option>yes</discard-malformed-option>
+  <discard-tcp-split-handshake>yes</discard-tcp-split-handshake>
+  <discard-overlapping-tcp-segment-mismatch>yes</discard-overlapping-tcp-segment-mismatch>
+  <remove-tcp-timestamp>yes</remove-tcp-timestamp>
+  <discard-icmp-large-packet>yes</discard-icmp-large-packet>
+  <description>Zone protection profile with best practice settings for external zones</description>
+</entry>

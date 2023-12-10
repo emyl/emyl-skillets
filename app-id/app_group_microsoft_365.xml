@@ -1,0 +1,13 @@
+<entry name="AppGroup-Microsoft365">
+  <members>
+    <member>ms-delve</member>
+    <member>ms-lync-base</member>
+    <member>ms-office365</member>
+    <member>ms-office365-base</member>
+    <member>ms-onedrive</member>
+    <member>sharepoint-online</member>
+    <member>ssh</member>
+    <member>stun</member>
+    <member>windows-push-notifications</member>
+  </members>
+</entry>

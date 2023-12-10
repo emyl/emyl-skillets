@@ -1,0 +1,14 @@
+<entry name="AppGroup-Sharepoint">
+  <members>
+    <member>http-video</member>
+    <member>ms-office365-base</member>
+    <member>ms-powerpoint-online</member>
+    <member>office365-enterprise-access</member>
+    <member>sharepoint-base</member>
+    <member>sharepoint-online</member>
+    <member>sharepoint-online-editing</member>
+    <member>ssl</member>
+    <member>web-browsing</member>
+    <member>webdav</member>
+  </members>
+</entry>

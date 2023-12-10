@@ -1,0 +1,60 @@
+name: security_profiles
+label: Content-ID - Common security profiles
+description: |
+  Create security profiles with best practice settings and, optionally, with alert only settings
+
+type: panos
+
+labels:
+  collection:
+    - Content-ID
+
+variables:
+  - name: vsys
+    description: Firewall virtual system
+    default: vsys1
+    type_hint: text
+  - name: url_filtering
+    description: Create URL Filtering profiles
+    default: yes
+    type_hint: radio
+    rad_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+  - name: alert
+    description: Create alert only profiles
+    default: no
+    type_hint: radio
+    rad_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+  
+snippets:
+  - name: virus
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/profiles/virus
+    file: virus.xml
+  - name: spyware
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/profiles/spyware
+    file: spyware.xml
+  - name: vulnerability
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/profiles/vulnerability
+    file: vulnerability.xml
+  - name: url-filtering
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/profiles/url-filtering
+    file: url_filtering.xml
+  - name: wildfire-analysis
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/profiles/wildfire-analysis
+    file: wildfire.xml
+  - name: profile-group
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/profiles/profile-group
+    file: profile_groups.xml

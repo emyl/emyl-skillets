@@ -1,0 +1,180 @@
+<entry name="AS-BPA">
+  <rules>
+    <entry name="Block">
+      <action>
+        <reset-both/>
+      </action>
+      <severity>
+        <member>critical</member>
+        <member>high</member>
+        <member>medium</member>
+      </severity>
+      <threat-name>any</threat-name>
+      <category>any</category>
+      <packet-capture>single-packet</packet-capture>
+    </entry>
+    <entry name="Default">
+      <action>
+        <default/>
+      </action>
+      <severity>
+        <member>low</member>
+        <member>informational</member>
+      </severity>
+      <threat-name>any</threat-name>
+      <category>any</category>
+      <packet-capture>disable</packet-capture>
+    </entry>
+  </rules>
+  <botnet-domains>
+    <lists>
+      <entry name="default-paloalto-dns">
+        <action>
+          <sinkhole/>
+        </action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+    </lists>
+    <dns-security-categories>
+      <entry name="pan-dns-sec-adtracking">
+        <log-level>low</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-cc">
+        <log-level>high</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-ddns">
+        <log-level>low</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-grayware">
+        <log-level>medium</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-malware">
+        <log-level>high</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-parked">
+        <log-level>low</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-phishing">
+        <log-level>high</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-proxy">
+        <log-level>medium</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-recent">
+        <log-level>medium</log-level>
+        <action>sinkhole</action>
+        <packet-capture>single-packet</packet-capture>
+      </entry>
+    </dns-security-categories>
+    <sinkhole>
+      <ipv4-address>pan-sinkhole-default-ip</ipv4-address>
+      <ipv6-address>::1</ipv6-address>
+    </sinkhole>
+  </botnet-domains>
+  <description>Anti-spyware profile with best practice settings</description>
+</entry>
+{% if alert == 'yes' %}
+<entry name="AS-Alert">
+  <rules>
+    <entry name="Capture">
+      <action>
+        <alert/>
+      </action>
+      <severity>
+        <member>critical</member>
+        <member>high</member>
+        <member>medium</member>
+      </severity>
+      <threat-name>any</threat-name>
+      <category>any</category>
+      <packet-capture>single-packet</packet-capture>
+    </entry>
+    <entry name="Default">
+      <action>
+        <default/>
+      </action>
+      <severity>
+        <member>low</member>
+        <member>informational</member>
+      </severity>
+      <threat-name>any</threat-name>
+      <category>any</category>
+      <packet-capture>disable</packet-capture>
+    </entry>
+  </rules>
+  <botnet-domains>
+    <lists>
+      <entry name="default-paloalto-dns">
+        <action>
+          <alert/>
+        </action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+    </lists>
+    <dns-security-categories>
+      <entry name="pan-dns-sec-adtracking">
+        <log-level>low</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-cc">
+        <log-level>high</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-ddns">
+        <log-level>low</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-grayware">
+        <log-level>medium</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-malware">
+        <log-level>high</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-parked">
+        <log-level>low</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-phishing">
+        <log-level>high</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-proxy">
+        <log-level>medium</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+      <entry name="pan-dns-sec-recent">
+        <log-level>medium</log-level>
+        <action>allow</action>
+        <packet-capture>disable</packet-capture>
+      </entry>
+    </dns-security-categories>
+  </botnet-domains>
+  <description>Anti-spyware profile with alert only settings</description>
+</entry>
+{% endif %}

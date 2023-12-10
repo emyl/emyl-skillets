@@ -1,0 +1,22 @@
+name: reports
+label: Useful custom reports
+description: |
+  Create some useful custom reports
+
+type: panorama
+
+labels:
+  collection:
+    - Reports
+
+variables:
+  - name: report_type
+    description: Report database
+    default: panorama-threat
+    type_hint: hidden
+  
+snippets:
+  - name: dns_security
+    cmd: set
+    xpath: /config/shared/reports
+    file: dns_security_threats.xml

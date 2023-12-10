@@ -1,0 +1,22 @@
+name: app_groups_panorama
+label: App-ID - Common application groups
+description: |
+  Create groups for applications which are usually enabled together
+
+type: panorama
+
+labels:
+  collection:
+    - App-ID
+
+variables:
+  - name: device_group
+    description: Panorama device group
+    default: shared
+    type_hint: text
+
+snippets:
+  - name: active_directory
+    cmd: set
+    xpath: "{% if device_group == 'shared' %}/config/shared/application-group{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/application-group{% endif %}"
+    file: app_group_active_directory.xml

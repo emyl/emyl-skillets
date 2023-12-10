@@ -1,0 +1,14 @@
+<entry name="WF-BPA">
+  <rules>
+    <entry name="Send all">
+      <application>
+        <member>any</member>
+      </application>
+      <direction>both</direction>
+      <analysis>public-cloud</analysis>
+      <file-type>
+        <member>any</member>
+      </file-type>
+    </entry>
+  </rules>
+</entry>

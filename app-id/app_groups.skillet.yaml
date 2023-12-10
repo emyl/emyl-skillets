@@ -1,0 +1,22 @@
+name: app_groups
+label: App-ID - Common application groups
+description: |
+  Create groups for applications which are usually enabled together
+
+type: panos
+
+labels:
+  collection:
+    - App-ID
+
+variables:
+  - name: vsys
+    description: Firewall virtual system
+    default: vsys1
+    type_hint: text
+  
+snippets:
+  - name: active_directory
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/application-group
+    file: app_group_active_directory.xml

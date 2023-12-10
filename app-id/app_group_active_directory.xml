@@ -1,0 +1,18 @@
+<entry name="AppGroup-ActiveDirectory">
+  <members>
+    <member>active-directory-base</member>
+    <member>dns-base</member>
+    <member>kerberos</member>
+    <member>ldap</member>
+    <member>ms-dc-replication</member>
+    <member>ms-ds-smb-base</member>
+    <member>ms-frs</member>
+    <member>ms-local-security-management</member>
+    <member>ms-netlogon</member>
+    <member>msrpc-base</member>
+    <member>netbios-dg</member>
+    <member>netbios-ns</member>
+    <member>netbios-ss</member>
+    <member>ntp-base</member>
+  </members>
+</entry>

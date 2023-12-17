@@ -1,0 +1,34 @@
+name: zone_protection
+label: Zone protection profiles with best practice settings
+description: |
+  Create zone protection profiles with best practice settings for external and internal zones
+
+type: panos
+
+labels:
+  collection:
+    - Network settings
+
+variables:
+  - name: alarm_rate
+    description: Alarm rate for flood protection
+    default: 9000
+    type_hint: text
+  - name: activate_rate
+    description: Activate rate for flood protection
+    default: 9000
+    type_hint: text
+  - name: max_rate
+    description: Max rate for flood protection
+    default: 39000
+    type_hint: text
+  
+snippets:
+  - name: zone_protection_external
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile
+    file: zone_protection_external.xml
+  - name: zone_protection_internal
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile
+    file: zone_protection_internal.xml

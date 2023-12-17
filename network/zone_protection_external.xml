@@ -1,11 +1,11 @@
-<entry name="ZP-BPA-Internal">
+<entry name="ZP-BPA-External">
   <flood>
     <tcp-syn>
-      <red>
+      <syn-cookies>
         <alarm-rate>{{ alarm_rate }}</alarm-rate>
         <activate-rate>{{ activate_rate }}</activate-rate>
         <maximal-rate>{{ max_rate }}</maximal-rate>
-      </red>
+      </syn-cookies>
       <enable>yes</enable>
     </tcp-syn>
     <udp>
@@ -44,21 +44,21 @@
   <scan>
     <entry name="8001">
       <action>
-        <alert/>
+        <block/>
       </action>
       <interval>2</interval>
       <threshold>100</threshold>
     </entry>
     <entry name="8002">
       <action>
-        <alert/>
+        <block/>
       </action>
       <interval>10</interval>
       <threshold>100</threshold>
     </entry>
     <entry name="8003">
       <action>
-        <alert/>
+        <block/>
       </action>
       <interval>2</interval>
       <threshold>100</threshold>
@@ -72,6 +72,5 @@
   <discard-overlapping-tcp-segment-mismatch>yes</discard-overlapping-tcp-segment-mismatch>
   <remove-tcp-timestamp>yes</remove-tcp-timestamp>
   <discard-icmp-large-packet>yes</discard-icmp-large-packet>
-  <description>Zone protection profile with best practice settings for internal zones</description>
-  <tcp-reject-non-syn>global</tcp-reject-non-syn>
+  <description>Zone protection profile with best practice settings for external zones</description>
 </entry>

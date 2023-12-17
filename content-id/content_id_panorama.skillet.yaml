@@ -1,0 +1,52 @@
+name: content_id_panorama
+label: Content-ID - Common security profiles
+description: |
+  Create security profiles with best practice settings and, optionally, with alert only settings
+
+type: panorama
+
+labels:
+  collection:
+    - Content-ID
+
+variables:
+  - name: device_group
+    description: Panorama device group
+    default: shared
+    type_hint: text
+  - name: dns_security
+    description: Add DNS Security settings
+    default: 'yes'
+    type_hint: dropdown
+    dd_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+  - name: alert
+    description: Create alert only profiles
+    default: 'no'
+    type_hint: dropdown
+    dd_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+  
+snippets:
+  - name: virus
+    cmd: set
+    xpath: "{% if device_group == 'shared' %}/config/shared/profiles/virus{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/profiles/virus{% endif %}"
+    file: virus.xml
+  - name: spyware
+    cmd: set
+    xpath: "{% if device_group == 'shared' %}/config/shared/profiles/spyware{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/profiles/spyware{% endif %}"
+    file: spyware.xml
+  - name: vulnerability
+    cmd: set
+    xpath: "{% if device_group == 'shared' %}/config/shared/profiles/vulnerability{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/profiles/vulnerability{% endif %}"
+    file: vulnerability.xml
+  - name: wildfire-analysis
+    cmd: set
+    xpath: "{% if device_group == 'shared' %}/config/shared/profiles/wildfire-analysis{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/profiles/wildfire-analysis{% endif %}"
+    file: wildfire.xml

@@ -51,7 +51,7 @@ Install [Panhandler](https://live.paloaltonetworks.com/t5/quickplay-solutions-to
 
 Install [SLI](https://github.com/PaloAltoNetworks/SLI) with python's *pip* then:
 * Clone this repository
-* Checkout the desired branch (e.g. *panos_v10_2* for PAN-OS 10.2)
+* Checkout the desired branch (e.g. *panos_v10.2* for PAN-OS 10.2)
 * `cd` to the collection directory
 * `sli -n <skillet_name> configure`
 * Follow the prompt
@@ -60,4 +60,4 @@ Install [SLI](https://github.com/PaloAltoNetworks/SLI) with python's *pip* then:
 
 Bug reports and contributions using Github issues and pull request are very welcome.
 
-To request a new skillet, please open an issue with the https://github.com/emyl/emyl-skillets-develop/labels/enhancement label so we can discuss.
+To request a new skillet, please open an issue with the https://github.com/emyl/emyl-skillets/labels/enhancement label so we can discuss.

@@ -253,6 +253,7 @@
     </alert>
   </credential-enforcement>
   <description>URL Filtering profile with alert only settings</description>
+  <log-http-hdr-user-agent>yes</log-http-hdr-user-agent>
   <local-inline-cat>yes</local-inline-cat>
   <cloud-inline-cat>yes</cloud-inline-cat>
   <alert>

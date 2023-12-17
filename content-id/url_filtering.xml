@@ -251,6 +251,7 @@
     </alert>
   </credential-enforcement>
   <description>URL Filtering profile with alert only settings</description>
+  <log-http-hdr-user-agent>yes</log-http-hdr-user-agent>
   <alert>
     <member>abortion</member>
     <member>abused-drugs</member>

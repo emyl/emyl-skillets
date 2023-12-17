@@ -87,6 +87,8 @@
   </credential-enforcement>
   <description>URL Filtering profile with best practice settings</description>
   <log-http-hdr-user-agent>yes</log-http-hdr-user-agent>
+  <local-inline-cat>yes</local-inline-cat>
+  <cloud-inline-cat>yes</cloud-inline-cat>
   <alert>
     <member>abortion</member>
     <member>alcohol-and-tobacco</member>
@@ -251,6 +253,8 @@
     </alert>
   </credential-enforcement>
   <description>URL Filtering profile with alert only settings</description>
+  <local-inline-cat>yes</local-inline-cat>
+  <cloud-inline-cat>yes</cloud-inline-cat>
   <alert>
     <member>abortion</member>
     <member>abused-drugs</member>

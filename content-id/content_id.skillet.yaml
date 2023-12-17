@@ -23,6 +23,15 @@ variables:
         value: 'yes'
       - key: 'No'
         value: 'no'
+  - name: inline_cloud
+    description: Enable Inline Cloud Analysys
+    default: yes
+    type_hint: dropdown
+    dd_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
   - name: alert
     description: Create alert only profiles
     default: no

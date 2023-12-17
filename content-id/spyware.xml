@@ -89,6 +89,24 @@
     </sinkhole>
   </botnet-domains>
   <description>Anti-spyware profile with best practice settings</description>
+  <cloud-inline-analysis>{{ inline_cloud }}</cloud-inline-analysis>
+  <mica-engine-spyware-enabled>
+    <entry name="HTTP Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="HTTP2 Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="SSL Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="Unknown-TCP Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="Unknown-UDP Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+  </mica-engine-spyware-enabled>
 </entry>
 {% else %}
 <entry name="AS-BPA">
@@ -181,6 +199,24 @@
     </sinkhole>
   </botnet-domains>
   <description>Anti-spyware profile with best practice settings</description>
+  <cloud-inline-analysis>{{ inline_cloud }}</cloud-inline-analysis>
+  <mica-engine-spyware-enabled>
+    <entry name="HTTP Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="HTTP2 Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="SSL Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="Unknown-TCP Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+    <entry name="Unknown-UDP Command and Control detector">
+      <inline-policy-action>reset-both</inline-policy-action>
+    </entry>
+  </mica-engine-spyware-enabled>
 </entry>
 {% endif %}
 {% if dns_security == 'yes' and alert == 'yes' %}
@@ -270,6 +306,24 @@
     </dns-security-categories>
   </botnet-domains>
   <description>Anti-spyware profile with alert only settings</description>
+  <cloud-inline-analysis>{{ inline_cloud }}</cloud-inline-analysis>
+  <mica-engine-spyware-enabled>
+    <entry name="HTTP Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="HTTP2 Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="SSL Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="Unknown-TCP Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="Unknown-UDP Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+  </mica-engine-spyware-enabled>
 </entry>
 {% elif alert == 'yes' %}
 <entry name="AS-Alert">
@@ -358,5 +412,23 @@
     </dns-security-categories>
   </botnet-domains>
   <description>Anti-spyware profile with alert only settings</description>
+  <cloud-inline-analysis>{{ inline_cloud }}</cloud-inline-analysis>
+  <mica-engine-spyware-enabled>
+    <entry name="HTTP Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="HTTP2 Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="SSL Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="Unknown-TCP Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+    <entry name="Unknown-UDP Command and Control detector">
+      <inline-policy-action>alert</inline-policy-action>
+    </entry>
+  </mica-engine-spyware-enabled>
 </entry>
 {% endif %}

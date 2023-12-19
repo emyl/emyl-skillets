@@ -8,7 +8,7 @@ Welcome to my skillets collection!
 
 Skillets are snippets of reusable configuration suitable for PAN-OS, the operating system of Palo Alto next-generation firewalls.
 
-For a more detailed introduction, a blog post is coming soon.
+For a more detailed introduction, you can read [this post on my blog](https://www.buymeacoffee.com/emyl79/the-power-skillets-part-1) dedicated to the argument.
 
 ## Available collections
 

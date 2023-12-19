@@ -1,4 +1,4 @@
-name: app_groups
+name: emyl_app_groups
 label: App-ID - Common application groups
 description: |
   Create groups for applications which are usually enabled together

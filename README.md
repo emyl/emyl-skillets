@@ -16,26 +16,26 @@ There are several types of skillets. At the moment this repository contains only
 
 For each PAN-OS major version (10.1+) a dedicated branch exists. Default branch is currently ***panos_v10.1*** for PAN-OS 10.1.
 
-For each skillet, there's a PAN-OS version and a Panorama version. The latter has the *_panorama* suffix in the skillet name.
+Each skillet name is prefixed with *emyl_* to avoid possible clash with skillets from other repositories on Panhandler. Moreover, for each skillet, two version exists: a PAN-OS version and a Panorama version. The latter has the *_panorama* suffix in the skillet name.
 
 Skillets are organized in collections. Below the current list:
 
 ### App-ID Collection
 
-* *app_groups*: Common application groups (Active Directory, M365, Sharepoint)
+* *emyl_app_groups*: Common application groups (Active Directory, M365, Sharepoint)
 
 ### Content-ID Collection
 
-* *content_id*: IPS profiles with best practice settings and alert settings (anti-virus, anti-spyware, vulnerability protection, Wildfire analysis)
-* *url_filtering*: URL Filtering profiles with best practice settings and alert settings
+* *emyl_content_id*: IPS profiles with best practice settings and alert settings (anti-virus, anti-spyware, vulnerability protection, Wildfire analysis)
+* *emyl_url_filtering*: URL Filtering profiles with best practice settings and alert settings
 
 ### Network Settings Collection
 
-* *zone_protection*: Zone Protection profiles with best practice settings and customizable flood thresholds
+* *emyl_zone_protection*: Zone Protection profiles with best practice settings and customizable flood thresholds
 
 ### Reports Collection
 
-* *reports*: Useful reports (currently DNS Security latest threats)
+* *emyl_reports*: Useful reports (currently DNS Security latest threats)
 
 ## How to apply skillets
 

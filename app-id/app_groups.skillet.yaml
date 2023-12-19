@@ -20,3 +20,11 @@ snippets:
     cmd: set
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/application-group
     file: app_group_active_directory.xml
+  - name: microsoft_365
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/application-group
+    file: app_group_microsoft_365.xml
+  - name: sharepoint
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/application-group
+    file: app_group_sharepoint.xml

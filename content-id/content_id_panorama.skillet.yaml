@@ -1,4 +1,4 @@
-name: content_id_panorama
+name: emyl_content_id_panorama
 label: Content-ID - Common security profiles
 description: |
   Create security profiles with best practice settings and, optionally, with alert only settings

@@ -1,4 +1,4 @@
-name: url_filtering
+name: emyl_url_filtering
 label: Content-ID - URL Filtering profiles
 description: |
   Create URL Filtering profiles with best practice settings and, optionally, with alert only settings

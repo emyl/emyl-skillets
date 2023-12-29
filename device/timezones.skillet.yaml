@@ -1,0 +1,20 @@
+name: emyl_timezones
+label: Get all the valid time zones
+description: |
+  Get all the valid time zones with a simple python script
+
+type: python3
+
+labels:
+  collection:
+    - lib
+
+variables:
+
+snippets:
+  - name: timezones_script
+    file: timezones.py
+    output_type: json
+    outputs:
+      - name: timezone_names
+        capture_pattern: '$.timezone_names[*].name'

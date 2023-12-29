@@ -1,0 +1,118 @@
+name: emyl_first_setup
+label: Template for first firewall setup
+description: |
+  part of a workflow to create set commands for first firewall setup
+
+type: template
+
+labels:
+  collection:
+    - lib
+
+variables:
+  - name: hostname
+    description: Firewall hostname
+    required: true
+    type_hint: text
+  - name: timezone
+    default: US/Pacific
+    description: Firewall time zone
+    type_hint: dropdown
+    source: timezones
+  - name: management_type
+    description: Management interface IP type
+    default: static
+    type_hint: dropdown
+    help_text: Choose whether the management interface will use DHCP or static configuration
+    dd_list:
+      - key: dhcp
+        value: dhcp
+      - key: static
+        value: static
+  - name: management_ip
+    description: Management IP address
+    default: 192.168.1.1
+    type_hint: ip_address
+    toggle_hint:
+      source: management_type
+      value: static
+  - name: management_netmask
+    description: Management subnet mask
+    type_hint: ip_address
+    default: 255.255.255.0
+    toggle_hint:
+      source: management_type
+      value: static
+  - name: management_gateway
+    description: Management default gateway
+    default: 192.168.1.254
+    type_hint: ip_address
+    toggle_hint:
+      source: management_type
+      value: static
+  - name: management_dns_1
+    description: Primary dns server
+    default: 8.8.8.8
+    type_hint: ip_address
+    toggle_hint:
+      source: management_type
+      value: static
+  - name: management_dns_2
+    description: Secondary dns server
+    default: 8.8.4.4
+    type_hint: ip_address
+    toggle_hint:
+      source: management_type
+      value: static
+  - name: panorama
+    description: Panorama management
+    default: 'Yes'
+    type_hint: dropdown
+    help_text: Choose whether the firewall is managed by Panorama or not
+    dd_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+  - name: panorama_1
+    description: Panorama primary IP/hostname
+    type_hint: fqdn_or_ip
+    toggle_hint:
+      source: panorama
+      value: 'yes'
+  - name: panorama_2
+    description: Panorama secondary IP/hostname
+    type_hint: fqdn_or_ip
+    toggle_hint:
+      source: panorama
+      value: 'yes'
+  - name: panorama_authkey
+    description: Panorama auth key
+    type_hint: text
+    toggle_hint:
+      source: panorama
+      value: 'yes'
+  - name: disable_sip_alg
+    description: Disable SIP ALG
+    default: 'no'
+    type_hint: dropdown
+    help_text: Choose whether to disable SIP ALG or not
+    dd_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+  - name: commit
+    description: Commit configuration
+    default: 'yes'
+    type_hint: dropdown
+    help_text: Choose whether to commit configuration or not
+    dd_list:
+      - key: 'Yes'
+        value: 'yes'
+      - key: 'No'
+        value: 'no'
+  
+snippets:
+  - name: first_setup_set.conf
+    file: first_setup_set.conf

@@ -1,0 +1,19 @@
+name: emyl_first_setup_workflow
+label: Workflow for first firewall setup
+description: |
+  Create set commands for management interface and, optionally, Panorama settings
+
+type: workflow
+
+labels:
+  collection:
+    - Device settings
+
+variables:
+  
+snippets:
+  - name: emyl_timezones
+  - name: emyl_first_setup
+    transform:
+      - name: timezones
+        source: timezone_names

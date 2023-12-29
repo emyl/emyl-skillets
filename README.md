@@ -12,11 +12,11 @@ For a more detailed introduction, you can read [this post on my blog](https://ww
 
 ## Available collections
 
-There are several types of skillets. At the moment this repository contains only ***panos*** and ***panorama*** skillets, that is small pieces of reusable configuration that can be applied to a firewall or a Panorama instance with a few clicks or commands. More types of skillets will be added shortly.
+There are several types of skillets available. Description of each type of skillet is out of scope, the best way to start if necessary is [Panhander documentation](https://panhandler.readthedocs.io/en/master/skillets.html).
 
 For each PAN-OS major version (10.1+) a dedicated branch exists. Default branch is currently ***panos_v10.1*** for PAN-OS 10.1.
 
-Each skillet name is prefixed with *emyl_* to avoid possible clash with skillets from other repositories on Panhandler. Moreover, for each skillet, two version exists: a PAN-OS version and a Panorama version. The latter has the *_panorama* suffix in the skillet name.
+Each skillet name is prefixed with *emyl_* to avoid possible clash with skillets from other repositories on Panhandler. Moreover, for each configuration skillet, two versions exists: a PAN-OS version and a Panorama version. The latter has the *_panorama* suffix in the skillet name.
 
 Skillets are organized in collections. Below the current list:
 
@@ -28,6 +28,10 @@ Skillets are organized in collections. Below the current list:
 
 * *emyl_content_id*: IPS profiles with best practice settings and alert settings (anti-virus, anti-spyware, vulnerability protection, Wildfire analysis)
 * *emyl_url_filtering*: URL Filtering profiles with best practice settings and alert settings
+
+### Device Settings Collection
+
+* *emyl_first_setup_workflow*: Workflow for creating ***set*** commands to be applied to the firewall for the very first configuration (e.g. when connected with serial console after first boot)
 
 ### Network Settings Collection
 
@@ -55,6 +59,12 @@ Install [SLI](https://github.com/PaloAltoNetworks/SLI) with python's *pip* then:
 * `cd` to the collection directory
 * `sli -n <skillet_name> configure`
 * Follow the prompt
+
+## Utilities
+
+Under the **utils** directory there are some useful scripts:
+
+* *sli_add_python_context.py*: a simple Python program that gets standard inputs and populates SLI context, to mimic execution of *python3* skillets.
 
 ## Contributing
 

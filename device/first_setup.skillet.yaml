@@ -64,34 +64,36 @@ variables:
     toggle_hint:
       source: management_type
       value: static
-  - name: panorama
-    description: Panorama management
-    default: 'Yes'
+  - name: firewall_management
+    description: Firewall configuration management
+    default: local
     type_hint: dropdown
-    help_text: Choose whether the firewall is managed by Panorama or not
+    help_text: Choose whether the firewall is managed locally, by Panorama or by Strata Cloud Manager
     dd_list:
-      - key: 'Yes'
-        value: 'yes'
-      - key: 'No'
-        value: 'no'
+      - key: Local
+        value: local
+      - key: Panorama
+        value: panorama
+      - key: Strata Cloud Manager
+        value: cloud_service
   - name: panorama_1
     description: Panorama primary IP/hostname
     type_hint: fqdn_or_ip
     toggle_hint:
-      source: panorama
-      value: 'yes'
+      source: firewall_management
+      value: panorama
   - name: panorama_2
     description: Panorama secondary IP/hostname
     type_hint: fqdn_or_ip
     toggle_hint:
-      source: panorama
-      value: 'yes'
+      source: firewall_management
+      value: panorama
   - name: panorama_authkey
     description: Panorama auth key
     type_hint: text
     toggle_hint:
-      source: panorama
-      value: 'yes'
+      source: firewall_management
+      value: panorama
   - name: disable_sip_alg
     description: Disable SIP ALG
     default: 'no'

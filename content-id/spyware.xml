@@ -87,6 +87,11 @@
       <ipv4-address>pan-sinkhole-default-ip</ipv4-address>
       <ipv6-address>::1</ipv6-address>
     </sinkhole>
+    <rtype-action>
+      <svcb>block</svcb>
+      <https>block</https>
+      <any>block</any>
+    </rtype-action>
   </botnet-domains>
   <description>Anti-spyware profile with best practice settings</description>
   <cloud-inline-analysis>{{ inline_cloud }}</cloud-inline-analysis>

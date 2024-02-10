@@ -27,6 +27,7 @@ Skillets are organized in collections. Below the current list:
 ### Content-ID Collection
 
 * *emyl_content_id*: IPS profiles with best practice settings and alert settings (anti-virus, anti-spyware, vulnerability protection, Wildfire analysis)
+* *emyl_panw_edl*: Security policies for blocking traffic to and from Palo Alto predefined IP lists
 * *emyl_url_filtering*: URL Filtering profiles with best practice settings and alert settings
 
 ### Device Settings Collection

@@ -1,0 +1,30 @@
+name: emyl_panw_edl
+label: Content-ID - Default security policies
+description: |
+  Create security policies for blocking traffic to and from Palo Alto predefined IP lists.
+
+type: panos
+
+labels:
+  collection:
+    - Content-ID
+
+variables:
+  - name: vsys
+    description: Firewall virtual system
+    default: vsys1
+    type_hint: text
+  
+snippets:
+  - name: panw_edl
+    cmd: set
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/rulebase/security/rules
+    file: panw_edl.xml
+  - name: move_edl1
+    cmd: move
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/rulebase/security/rules/entry[@name='Block inbound malicious IP']
+    where: top
+  - name: move_edl2
+    cmd: move
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ vsys }}']/rulebase/security/rules/entry[@name='Block outbound malicious IP']
+    where: top

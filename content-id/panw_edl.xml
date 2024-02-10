@@ -1,0 +1,74 @@
+<entry name="Block outbound malicious IP">
+  <to>
+    <member>any</member>
+  </to>
+  <from>
+    <member>any</member>
+  </from>
+  <source>
+    <member>any</member>
+  </source>
+  <destination>
+    <member>panw-bulletproof-ip-list</member>
+    <member>panw-highrisk-ip-list</member>
+    <member>panw-known-ip-list</member>
+    <member>panw-torexit-ip-list</member>
+  </destination>
+  <source-user>
+    <member>any</member>
+  </source-user>
+  <category>
+    <member>any</member>
+  </category>
+  <application>
+    <member>any</member>
+  </application>
+  <service>
+    <member>any</member>
+  </service>
+  <source-hip>
+    <member>any</member>
+  </source-hip>
+  <destination-hip>
+    <member>any</member>
+  </destination-hip>
+  <action>deny</action>
+  <description>Block outbound traffic to hosts that Palo Alto Networks and trusted third-party sources have proven malicious.</description>
+</entry>
+<entry name="Block inbound malicious IP">
+  <to>
+    <member>any</member>
+  </to>
+  <from>
+    <member>any</member>
+  </from>
+  <source>
+    <member>panw-bulletproof-ip-list</member>
+    <member>panw-highrisk-ip-list</member>
+    <member>panw-known-ip-list</member>
+    <member>panw-torexit-ip-list</member>
+  </source>
+  <destination>
+    <member>any</member>
+  </destination>
+  <source-user>
+    <member>any</member>
+  </source-user>
+  <category>
+    <member>any</member>
+  </category>
+  <application>
+    <member>any</member>
+  </application>
+  <service>
+    <member>any</member>
+  </service>
+  <source-hip>
+    <member>any</member>
+  </source-hip>
+  <destination-hip>
+    <member>any</member>
+  </destination-hip>
+  <action>deny</action>
+  <description>Block inbound traffic from hosts that Palo Alto Networks and trusted third-party sources have proven malicious.</description>
+</entry>

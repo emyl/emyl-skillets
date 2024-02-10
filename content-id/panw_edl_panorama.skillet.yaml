@@ -1,0 +1,30 @@
+name: emyl_panw_edl_panorama
+label: Content-ID - Default security policies
+description: |
+  Create security policies for blocking traffic to and from Palo Alto predefined IP lists.
+
+type: panorama
+
+labels:
+  collection:
+    - Content-ID
+
+variables:
+  - name: device_group
+    description: Panorama device group
+    default: shared
+    type_hint: text
+  
+snippets:
+  - name: panw_edl
+    cmd: set
+    xpath: "{% if device_group == 'shared' %}/config/shared/pre-rulebase/security/rules{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/pre-rulebase/security/rules{% endif %}"
+    file: panw_edl.xml
+  - name: move_edl1
+    cmd: move
+    xpath: "{% if device_group == 'shared' %}/config/shared/pre-rulebase/security/rules/entry[@name='Block inbound malicious IP']{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/pre-rulebase/security/rules/entry[@name='Block inbound malicious IP']{% endif %}"
+    where: top
+  - name: move_edl2
+    cmd: move
+    xpath: "{% if device_group == 'shared' %}/config/shared/pre-rulebase/security/rules/entry[@name='Block outbound malicious IP']{% else %}/config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ device_group }}']/pre-rulebase/security/rules/entry[@name='Block outbound malicious IP']{% endif %}"
+    where: top
